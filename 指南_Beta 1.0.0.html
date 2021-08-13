@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>新文档</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<script type = "text/javascript" > 
+//create content
+document.addEventListener("DOMContentLoaded", function()
+{
+    toTop();//置顶
+
+    var div1            = document.createElement("div");
+    div1.style.cssText  = "clear:both";
+
+    // create TOC list
+    var outline         = document.createElement("div");
+    outline.setAttribute("id", "outline-list");
+    outline.style.cssText = "border:solid 1px #ccc; background:#eee; min-width:200px;padding:4px 10px;";
+
+    var ele_p           = document.createElement("p");
+    ele_p.style.cssText = "text-align: left; margin: 0;";
+    outline.appendChild(ele_p);
+
+    var ele_span        = document.createElement("span");
+
+    // ele_span.style.cssText = "float: left;";
+    var ele_text        = document.createTextNode("目录");
+    ele_span.appendChild(ele_text);
+
+    var ele_a           = document.createElement("a");
+    ele_a.appendChild(document.createTextNode("[+]"));
+    ele_a.setAttribute("href", "#");
+    ele_a.setAttribute("onclick", "javascript:return openct(this);");
+    ele_a.setAttribute("title", "Click to Open 目录");
+
+    ele_span.appendChild(ele_a);
+    ele_p.appendChild(ele_span);
+
+    var ul_top          = document.createElement("ul"); // 顶级
+    ul_top.style.cssText = "display:none;margin-left:14px;padding-left:14px;line-height:160%;";
+    ul_top.setAttribute("id", "outline_ol");
+    outline.appendChild(ul_top);
+    var div1            = document.createElement("div");
+    div1.style.cssText  = "clear:both";
+
+    document.body.insertBefore(outline, document.body.childNodes[0]);
+
+    // get all the headlines
+    var headers         = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+
+    if (headers.length < 2)
+        return;
+
+
+    var old_h = 1;
+
+    var ul_array = new Array(7);
+    var ul_current = null;
+    ul_array[1] = ul_top;
+
+    for (var i = 0; i < headers.length; i++)
+    {
+        // get H* and prepare for the ordered list 
+        var header = headers[i];
+
+        //header.setAttribute("id", "t" + i + header.tagName);
+        header.setAttribute("id", header.textContent);
+        var h = parseInt(header.tagName.substr(1), 10);
+
+        // assert  1<=h && h <= 6
+
+        ul_current = 0;
+        if (h < old_h)
+        {
+            for (var j = h+1; j <= 6; j++)
+            {
+                ul_array[j] = null;
+            }
+            ul_current = h;
+        }
+        else if (h == old_h)
+        {
+            ul_current = h;
+        }
+        else if (h > old_h)
+        {
+            ul_current = old_h + 1; /* 是old_h + 1的原因： h如果是old_h + 2 或者 + 3时，
+                                        我们依然按 + 1来做 */
+        }
+
+        if (ul_array[ul_current] == null)
+        {
+            ul_array[ul_current] = document.createElement("ul");
+            if (h>1)
+            {
+                ul_array[h-1].lastChild.appendChild(ul_array[ul_current]);
+            }
+        }
+
+        var elem_li = document.createElement("li");
+        ul_array[ul_current].appendChild(elem_li);
+
+        var a = document.createElement("a");
+
+        // set href for the TOC item 
+        //a.setAttribute("href", "#t" + i + header.tagName);
+        a.setAttribute("href", "#" + header.textContent);
+
+        // TOC item text
+        //a.innerHTML  = "h" + h + header.textContent;
+        a.innerHTML  = header.textContent;
+
+
+        elem_li.appendChild(a);
+
+        old_h = h;
+    }
+});
+function toTop(){
+    var toTop           = document.createElement("div");
+    toTop.style.cssText = "position:fixed;bottom:10px;right:10px;width:20x;height:20px;background:gray;padding:5px;";
+    toTop.innerHTML="^"
+    toTop.setAttribute("id", "toTop");
+    toTop.setAttribute("title", "to top");
+    document.body.insertBefore(toTop, document.body.childNodes[0]);
+
+    // 获取置顶对象
+    var obj = document.getElementById('toTop');
+
+    // 置顶对象点击事件
+    obj.onclick = function() {
+        var timer = setInterval(function() {
+            window.scrollBy(0, -500);
+            if(document.documentElement && document.documentElement.scrollTop) //IE
+            {
+                if(document.documentElement.scrollTop<=0){
+                    clearInterval(timer);
+                }else{
+                    window.scrollBy(0,-500);
+                }
+            }else{ //Chrome不支持documentElement.scrollTop
+                if(document.body.scrollTop<=0){
+                    clearInterval(timer);
+                }else{
+                    window.scrollBy(0,-500);
+                }
+                if (document.body.scrollTop == 0) {
+                    clearInterval(timer);
+                };
+            }
+        }, 2);
+    }
+
+    // 窗口滚动检测
+    //window.onscroll = function() {
+    //    obj.style.display = (document.body.scrollTop >= 300) ? "block" : "none";
+    //}
+}
+// 
+function openct(e)
+{
+    if (e.innerHTML == '[+]')
+    {
+        // createTextNode
+        e.setAttribute('title', 'collapse');
+        e.innerHTML         = '[-]';
+        var             element = document.getElementById("outline_ol");
+
+        element.style.cssText = "margin-left:14px;padding-left:14px;line-height:160%;";
+    }
+    else 
+    {
+        e.setAttribute('title', 'expand');
+        e.innerHTML         = '[+]';
+        var             element = document.getElementById("outline_ol");
+
+        element.style.cssText = "display:none;margin-left:14px;padding-left:14px;line-height:160%;";
+    }
+
+    e.blur();
+    return false;
+}
+
+
+</script>
+</head>
+<body>
+<h1><center>从零开始的计算机装机</center></h1>
+<p align=right>——拥有和Dr.周穆阳一样的电脑吧！</p>
+<p><p align=right>Beta 1.0.0<p></p>
+<h2>序</h2>
+<p>最近运气烂到极致，一周之内把我两块原生硬盘全都干碎了，1T机械恢复要600,256G固态竟然要3k。</p>
+<p>600的认了，3k是真的修不起了。但是由于3k的是c盘，所以换了新盘之后电脑现在跟新的一样（可怜我玩了两年的单机游戏完美存档也……）虽然绝大部分工具都装在成功恢复绝大部分的d盘中了，但是多数都还是得重新配置（这点之后会讲为什么）</p>
+<p>不过其实一直也想找个机会总结出一份计算机装机必备的方案和问题解决的指南，长久以来遇到的很多问题基本上都是见过好多次的问题，每次都没有记录以至于每次都要重新上网寻找解决办法。以前对于文件也缺少维护，搞得文件乱糟糟的，跟我的百度网盘一样……</p>
+<p>同时也试着尝试一些新东西，就比如一直都想做的本地音乐库和听歌方案。原本一直在用网易云，每年的会员费其实还好，主要是很多过去收藏的歌因为版权大战都没办法听了，本人又十分恶心QQ的任何东西，长远来看，自建音乐库是最保险又实惠的方案。</p>
+<p>总而言之，以这次装机为契机，会推荐一些计算机装机软件推荐、一些使用技巧、记录遇到过的问题及解决办法、和一些注意事项，以及数据的整理、维护与安全。</p>
+<h2>我在用Markdown编辑这份指南</h2>
+<h3><strong>为什么用Markdown编辑？</strong></h3>
+<p>Markdown是一种轻量级标记语言，如你所见，这篇文章的排版只需要几个#，空行，星号就能自动生成，不需要使用鼠标，整篇文章的内容和格式设置在键盘上输入即可。</p>
+<p>Markdown的排版足够简单，因此可以集中精力在内容上面，而不用花费大量时间研究那些复杂又用不上的排版功能。</p>
+<p>很多笔记软件和博客型网站都支持（或支持大部分）Markdown格式，所以当你有了一份Markdown文件，也就意味着你在这些地方都有了一份排版完成的文章。并且Markdown设计目的之一就是输出HTML格式的内容，因此对发布在网络上的内容天然友好（不过根据不同网站对HTML的支持方法可能需要一定的调试）</p>
+<p>不用担心编辑软件崩溃（除非记事本崩溃）</p>
+<blockquote>
+<p>这里我用的是MarkdownPad 2这个编辑器，但是其实就算记事本也可以编辑Markdown文档。</p>
+<p>但是我想无论是记事本还是MP2，稳定性应该都比OFFICE强得多</p>
+</blockquote>
+<p>基本上无需担心版本不兼容的问题。</p>
+<p>P.S.如果能学会使用Git那么就能实现多人协作编辑和版本记录</p>
+<h3><strong>Markdown 5分钟上手语法</strong></h3>
+<p>Markdown没有想象的那么难，也不用安装完编辑器就去看那长篇的语法指南，以我这篇文章为例，想要开始用Markdown编辑一篇文章，只需要知道以下语法：</p>
+<ol>
+<li>
+<p>文字前一个#表明该段为一级标题，两个#就是二级标题，以此类推，最多可以有六个#</p>
+</li>
+<li>
+<p>段与段之间空行分隔，只一个回车不能开启下一段，如example2，两个“未分段”<strong>没有空行</strong>，显示中只间隔一个空格，而第二个“未分段”和“分段”之间<strong>有一个空行</strong>，因此成功分段。</p>
+<blockquote>
+<p>这是原版的要求，如果使用GIthub风格的话不用空行，不过从兼容角度考虑还是建议段与段之间空行。</p>
+<p>原版段落换行的另一个办法是段尾两个空格然后回车，这样实现的是没有空行间隔的换行，不过这样个人感觉不如隔行好看，考虑兼容的话也不如直接空行来得方便。</p>
+</blockquote>
+</li>
+<li>
+<p>有序列表的输入方式是数字.制表符。</p>
+<blockquote>
+<p>如你所见，数字不影响有序列表的序，但会影响你自己编辑时的观感。</p>
+<p>另外，列表内分段需要缩进，不缩进分段会直接结束列表，如<em><a href="#example">example</a></em>（也就是说列表项之间是不需要（但可以）空行的，这也是为什么我要把<em>example</em>拿到外面去）。</p>
+</blockquote>
+</li>
+<li>
+<p>两个星号包覆的文字是<strong>加粗</strong>，一个星号包覆的文字是<em>斜体<em>。当然，你也可以选中对应文字后按</em></em>Ctrl+B<em><em>和</em>Ctrl+I</em>键。</p>
+<blockquote>
+<p>但是，如你所见，如果你使用的是标准Markdown语法的话在加粗与斜体混用之后出现了不该斜体的文字被斜体。</p>
+<p>一个解决办法是给不该被斜体的部分的“星号框”加空格，比如* example <em>；另一个解决办法是</em><em>F7</em>*Markdown中设置Markdown处理器为Github风格离线处理器（在线的也可以，如果你有账号的话），这个问题本质上还是原始Markdown语法识别不够智能导致的。</p>
+<p>各版本语法指南详见帮助文档</p>
+</blockquote>
+</li>
+<li>
+<p>右尖括号后的文字是引用，就像上面3和4下面的文字一样。</p>
+<blockquote>
+<p>引用文字的段落切换不用空行，但是如果想实现段与段之间间隔的话还是可以手动空行。</p>
+<p>引用文字可以偷懒，不在每个段落头都加上&gt;，但是如果手动空行的话必须每一段都加上&gt;。因此也建议每一段都加上&gt;。</p>
+<p>虽然名义上是引用文字，不过像这样作为补充注释也挺不错的</p>
+</blockquote>
+</li>
+<li>
+<p>如题头那种《center》《/center》是html标记语言，在Markdown中可以直接使用html语言，具体细节又是能写很多的东西所以不详述，如果是要写html的话不建议用Markdown，只建议用一些格式标签调一下格式，但这是进阶内容了。</p>
+<blockquote>
+<p>《》请自行替换成&lt;&gt;，Markdown不支持尖括号转义，不这样写的话会直接识别成标签不会显示出来。
+转义符是\。</p>
+</blockquote>
+</li>
+<li>
+<p>创造链接
+格式是[]()，[]内填入要<a href="">显示的内容</a>，括号内添加打开的<a href="https://www.bilibili.com/video/BV1GJ411x7h7?from=search&amp;seid=3711640469774394255">网址</a></p>
+</li>
+<li>
+<p>目录功能
+MarkdownPad 2似乎没有自带的目录页面链接的功能，从网上找了一个自制目录的功能，详情见<a href="https://blog.csdn.net/u013788943/article/details/81629822">MarkdownPad2 自动生成目录</a></p>
+<blockquote>
+<p>也可以自己用上述创造链接的办法手动制作目录，不过需要一点HTML知识</p>
+</blockquote>
+</li>
+<li>
+<p>说了这么多，其实都不如自己亲自操作一下来得实在，切换为Github风格能避免大部分问题，如果再遇到问题善用bing。</p>
+</li>
+</ol>
+<p><em><a id='example'>example</a></em></p>
+<blockquote>
+<p>这个例子在Github风格下是正常的</p>
+</blockquote>
+<p>未分段
+未分段</p>
+<p>分段</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
